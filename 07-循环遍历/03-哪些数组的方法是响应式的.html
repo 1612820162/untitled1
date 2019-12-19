@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id="app">
+        <ul>
+            <li v-for="item in letters">{{item}}</li>
+        </ul>
+        <button @click="btnClick">按钮</button>
+    </div>
+
+    <script src = "../vuejs/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                letters: ['a', 'b', 'c', 'd']
+            },
+            methods: {
+                btnClick(){
+                    this.letters.push("aaa");
+                    //this.letters.pop();删除最后一个
+                    //this.letters.unshift("aaa");在开始添加
+                    //this.letters.shift();删除开始位置的元素
+                    //this.letters.splice(要修改的起始位置，要修改的数量，要添加的元素);三个参数，功能强大
+                    //this.letters.sort();
+                    //this.letters.reverse();反转
+                    //Vue.set(要修改的对象，索引值，修改后的值）
+                    //以上方法都是响应式的
+                    //用索引修改数组的方法不是响应式的
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
